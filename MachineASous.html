@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<script>
+	banque = 1000;
+	sous = 100;
+	function nbAlea() {
+		nbr1 = Math.floor(Math.random() * 10);
+		nbr2 = Math.floor(Math.random() * 10);
+		nbr3 = Math.floor(Math.random() * 10);
+		document.getElementById("PlaceNbr1").innerHTML = nbr1;
+		document.getElementById("PlaceNbr2").innerHTML = nbr2;
+		document.getElementById("PlaceNbr3").innerHTML = nbr3;
+		gain()
+	}
+	
+	function gain() {		
+		if (banque < 500) {
+			checkRefresh();
+		} else if (nbr1 == 9 && nbr2 == 9 && nbr3 == 9) {
+			result = "Bingo !";
+			sous = sous + banque;
+			banque = 0;
+			console.log("Bingo");
+		} else if (nbr1 == nbr2 && nbr2 == nbr3) {
+			result = "Mini Bingo !";
+			sous = sous + 6*Number(document.getElementById("searchbar").value);
+			banque = banque - 6*Number(document.getElementById("searchbar").value);
+			console.log("Mini Bingo");
+		} else if (nbr1 == nbr2) {
+			result = "Gagné !";
+			sous = sous + 3*Number(document.getElementById("searchbar").value);
+			banque = banque - 3*Number(document.getElementById("searchbar").value);
+			console.log("Gagné");
+		} else if (nbr1 == nbr3) {
+			result = "Gagné !";
+			sous = sous + 3*Number(document.getElementById("searchbar").value);
+			banque = banque - 3*Number(document.getElementById("searchbar").value);
+			console.log("Gagné");
+		} else if (nbr2 == nbr3) {
+			result = "Gagné !";
+			sous = sous + 3*Number(document.getElementById("searchbar").value);
+			banque = banque - 3*Number(document.getElementById("searchbar").value);
+			console.log("Gagné");
+		} else {
+			result = "Perdu !";
+			sous = sous - Number(document.getElementById("searchbar").value);
+			banque = banque + Number(document.getElementById("searchbar").value);
+			console.log("Perdu");
+		}
+		document.getElementById("Gain").innerHTML = result;
+		document.getElementById("Banque").innerHTML = banque;
+		document.getElementById("Sous").innerHTML = sous;
+	}
+	
+	function checkRefresh() {
+		console.log("ARRET!");
+		window.location.reload();
+	}
+			
+	function regles() {
+		document.location.href="règle.html"; 
+	}
+</script>
+	<head>
+		<title> Machine à sous </title>
+		<link href="MachineASous.css" rel="stylesheet">
+		<link rel="icon" type="image/x-icon" href="EV.jpg" />
+	</head>
+	<body>
+		<h1 class="Menu"> Machine à sous </h1>
+		<article class="rouleau1">
+			<table>
+				<tr>
+					<td class="Nbr"> <a id="PlaceNbr1"> </a> <a id="PlaceNbr2"> </a> <a id="PlaceNbr3"> </a> </td>
+				</tr>
+				<tr> 
+					<td class="banque"> Banque : <a id="Banque"> </a> </td>
+				</tr>
+				<tr> 
+					<td class="sous"> Vos sous : <a id="Sous"> </a> </td>
+				</tr>
+				<tr> 
+					<td align="center"> Votre mise : </td>
+				</tr>
+				<tr>
+					<td> <input id="searchbar" type=number placeholder="Veuillez rentrez votre mise"> </td>
+					<td> <button onclick="nbAlea()">LANCER</button> </td>
+					<td> <button onclick="regles()"> REGLES </td>
+				</tr>
+				<tr>
+					<td align="center"> <a id="Gain"> </a> </td>
+				</tr>
+			</table>
+		</article>
+	</body>
+</html> 

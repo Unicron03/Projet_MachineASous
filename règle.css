@@ -1,0 +1,50 @@
+body
+{ 
+	margin: 0;
+	font-size: 1.1em;
+	background: url("Fond2.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+}
+
+article
+{
+	text-align:left;
+	padding-left:4%;
+	margin-top:1%;
+	font-size: 120%;
+}
+
+.styled 
+{
+    border: 0;
+	margin-top:0%;
+	background-attachment: relative;
+	font-size:1em;
+	width: 200px; 
+	height: 75px;
+	display:inline-block; 
+    line-height: 2.5;
+    color: white;
+	cursor: pointer;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 40px;
+    background-color: rgba(220, 0, 0, 1);
+    background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .2),
+                                      rgba(0, 0, 0, .2) 30%,
+                                      rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+.styled:hover {
+    background-color: rgba(0, 0, 0, 0);
+	color: red
+}
+
+.styled:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}

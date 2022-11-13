@@ -1,0 +1,44 @@
+body
+{ 
+	margin: 0;
+	font-size: 1.1em;
+	background: url("Fond1.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+}
+
+.Menu
+{
+	margin-top: 3%;
+	margin-left: 40%;
+	color: purple;
+}
+
+.rouleau1
+{
+	width: 500px;
+    height: auto;
+	font-size: 2em;
+	margin-left: 41%;
+	margin-top: 2%;
+	color: gold;
+}
+
+.Nbr
+{
+	text-align: center;
+	padding-bottom: 5%;
+}
+
+.banque
+{
+	text-align: center;
+	padding-bottom: 5%;
+}
+
+.sous
+{
+	text-align: center;
+	padding-bottom: 5%;
+}
